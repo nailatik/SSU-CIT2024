@@ -1,18 +1,22 @@
 #include <iostream>
 
-int fib(int n){
-	if(n <= 1){
-		return n;
-	}
-	return fib(n-1) + fib(n-2);
-}
+void fib(int n){
+	int a = 0, b = 1;
+	std::cout << "Hello, World! People, look at your fibbonachi list: \n";
+	for (int i = 1; i <= n; i++){
+		std::cout << "N(" << i << "): " << a << std::endl;
+		int next = a + b;
+		a = b;
+		b = next;
+	}	
+}	
 
 int main(){
 	int n;
-	std::cout << "Enter N: ";
+	std::cout << "Hey! Enter N: ";
 	std::cin >> n;
-	std::cout << "Hello, World! People, look at your fibbonachi " << "(n = " << n << "):" << '\t' << fib(n-1) << '\n';
+
+	fib(n);
 
 	return 0;
 }	
-
